@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kizuki Systems | Forensic PropTech & Spatial Intelligence</title>
+    <!-- Tailwind CSS for modern, responsive layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            600: '#4f46e5', // Primary Indigo
+                            700: '#4338ca',
+                            900: '#1e1b4b',
+                        },
+                        accent: {
+                            500: '#10b981', // Emerald for growth/success
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'ui-sans-serif', 'system-ui'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* AODA Compliance & Core Polish */
+        html { scroll-behavior: smooth; }
+        :focus-visible { outline: 3px solid #4f46e5; outline-offset: 2px; }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+        }
+
+        .forensic-border {
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-value { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 leading-relaxed antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200 shadow-sm" aria-label="Main Navigation">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-brand-600/20">
+                    <i data-lucide="hexagon"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-black tracking-tighter text-slate-900 uppercase leading-none">
+                        Kizuki <span class="text-brand-600">Systems</span>
+                    </h1>
+                    <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mt-1">Forensic Intelligence</p>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#mission" class="text-sm font-bold text-slate-500 hover:text-brand-600 transition-colors">Mission</a>
+                <a href="#intelligence" class="text-sm font-bold text-slate-500 hover:text-brand-600 transition-colors">Intelligence</a>
+                <a href="#divisions" class="text-sm font-bold text-slate-500 hover:text-brand-600 transition-colors">Divisions</a>
+                <a href="#provenance" class="text-sm font-bold text-slate-500 hover:text-brand-600 transition-colors">Provenance</a>
+                <a href="#" class="px-5 py-2.5 bg-slate-900 text-white text-xs font-black uppercase tracking-widest rounded-full hover:bg-brand-600 transition-all shadow-md">Audit Console</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="mission" class="relative py-24 md:py-32 bg-white overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-50/50 -skew-x-12 transform origin-top translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div class="space-y-8">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-50 border border-brand-100 rounded-full text-brand-600 text-xs font-black uppercase tracking-[0.2em]">
+                    <span class="w-2 h-2 bg-brand-600 rounded-full animate-pulse"></span> Track Record: $20.7M+ Municipal Revenue
+                </span>
+                <h2 class="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter leading-[0.9]">
+                    Engineering <br/>
+                    <span class="gradient-text tracking-tighter italic">Asset Sovereignty.</span>
+                </h2>
+                <p class="text-xl text-slate-500 max-w-xl leading-relaxed font-medium">
+                    Kizuki Systems identifies hidden liabilities and optimizes NOI through high-fidelity spatial data. We bridge the gap between physical building mechanics and digital data governance.
+                </p>
+                <div class="flex flex-wrap items-center gap-6">
+                    <a href="#divisions" class="px-8 py-4 bg-brand-600 text-white font-black rounded-2xl hover:bg-brand-700 transition-all shadow-xl shadow-brand-600/20 flex items-center gap-3">
+                        EXPLORE DIVISIONS <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <div class="flex items-center gap-4 text-slate-400 font-bold text-xs uppercase tracking-widest">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-slate-100 border-2 border-white flex items-center justify-center"><i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i></div>
+                            <div class="w-8 h-8 rounded-full bg-slate-100 border-2 border-white flex items-center justify-center"><i data-lucide="database" class="w-4 h-4 text-brand-600"></i></div>
+                        </div>
+                        <span>AODA Compliant Stack</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="p-8 bg-slate-50 rounded-[2.5rem] forensic-border space-y-2">
+                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">ASE Daily Yield</p>
+                    <p class="text-3xl font-black text-slate-900 stat-value tracking-tighter">$13,244</p>
+                    <p class="text-[10px] text-brand-600 font-bold">Architecture Output</p>
+                </div>
+                <div class="p-8 bg-brand-600 rounded-[2.5rem] text-white shadow-2xl space-y-2">
+                    <p class="text-[10px] font-black text-brand-100 uppercase tracking-widest leading-none">Unit Audit ROI</p>
+                    <p class="text-3xl font-black stat-value tracking-tighter">10X</p>
+                    <p class="text-[10px] text-brand-100 font-bold">Avg. Liability Capture</p>
+                </div>
+                <div class="col-span-2 p-10 bg-white border border-slate-200 rounded-[3rem] shadow-sm relative overflow-hidden group">
+                    <div class="absolute right-0 top-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="scan-eye" class="w-32 h-32 text-brand-600"></i></div>
+                    <h3 class="text-xs font-black text-brand-600 uppercase tracking-[0.2em] mb-4">Current Status</h3>
+                    <p class="text-lg font-bold text-slate-900 leading-tight">Actively conducting Gaussian Splat audits for multi-residential assets in the National Capital Region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTELLIGENCE HUB -->
+    <section id="intelligence" class="py-24 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+                <div class="space-y-4">
+                    <h2 class="text-xs font-black text-brand-600 uppercase tracking-[0.3em]">PropTech Innovation</h2>
+                    <h3 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none">The Intelligence Hub.</h3>
+                </div>
+                <p class="text-lg text-slate-500 max-w-md font-medium">Transforming raw spatial telemetry into mission-critical asset wisdom.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Logic 1 -->
+                <div class="p-10 bg-white rounded-[2.5rem] border border-slate-200 hover:border-brand-600 transition-all shadow-sm group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 mb-8 group-hover:bg-brand-600 group-hover:text-white transition-all shadow-inner">
+                        <i data-lucide="box"></i>
+                    </div>
+                    <h4 class="text-2xl font-black tracking-tighter text-slate-900 mb-4 uppercase">Digital Twins</h4>
+                    <p class="text-sm text-slate-500 font-medium leading-relaxed italic">
+                        Utilizing NeRF and Gaussian Splatting to build high-fidelity 3D Building Information Models (BIM) for trade coordination and liability identification.
+                    </p>
+                </div>
+                <!-- Logic 2 -->
+                <div class="p-10 bg-white rounded-[2.5rem] border border-slate-200 hover:border-brand-600 transition-all shadow-sm group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 mb-8 group-hover:bg-brand-600 group-hover:text-white transition-all shadow-inner">
+                        <i data-lucide="fingerprint"></i>
+                    </div>
+                    <h4 class="text-2xl font-black tracking-tighter text-slate-900 mb-4 uppercase">Sovereign Data</h4>
+                    <p class="text-sm text-slate-500 font-medium leading-relaxed italic">
+                        Local-first architectures ensuring sensitive property and resident data remain within the private control of the asset owner—no cloud leakage.
+                    </p>
+                </div>
+                <!-- Logic 3 -->
+                <div class="p-10 bg-white rounded-[2.5rem] border border-slate-200 hover:border-brand-600 transition-all shadow-sm group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 mb-8 group-hover:bg-brand-600 group-hover:text-white transition-all shadow-inner">
+                        <i data-lucide="thermometer-snowflake"></i>
+                    </div>
+                    <h4 class="text-2xl font-black tracking-tighter text-slate-900 mb-4 uppercase">Thermal Envelopes</h4>
+                    <p class="text-sm text-slate-500 font-medium leading-relaxed italic">
+                        Forensic analysis of window seals, attic baffles, and HVAC air infiltration to stop energy "value leaks" and improve EnerGuide ratings.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVISIONS -->
+    <section id="divisions" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20 items-start">
+                <div class="space-y-12">
+                    <div class="space-y-4">
+                        <h2 class="text-xs font-black text-brand-600 uppercase tracking-[0.3em]">Operational Structure</h2>
+                        <h3 class="text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none italic">Execution <br/> Domains.</h3>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-6 group">
+                            <div class="w-12 h-12 bg-indigo-50 border border-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all shrink-0">
+                                <i data-lucide="brain"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-black text-slate-900 uppercase tracking-tight">Kizuki Consulting (The Brain)</h4>
+                                <p class="text-slate-500 font-medium text-sm mt-1 leading-relaxed">Systems Architecture, BIM Design, and Policy Development for municipal and corporate stakeholders.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div class="w-12 h-12 bg-emerald-50 border border-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all shrink-0">
+                                <i data-lucide="wrench"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-black text-slate-900 uppercase tracking-tight">Field Ops (The Hands)</h4>
+                                <p class="text-slate-500 font-medium text-sm mt-1 leading-relaxed">Active asset preservation, Unit Integrity Audits, and high-precision mechanical maintenance.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div class="w-12 h-12 bg-brand-50 border border-brand-100 rounded-xl flex items-center justify-center text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-all shrink-0">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-black text-slate-900 uppercase tracking-tight">Logistics (The Last Mile)</h4>
+                                <p class="text-slate-500 font-medium text-sm mt-1 leading-relaxed">Move-in optimization and "Executive Space" staging for high-density luxury residential units.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-900 rounded-[3.5rem] p-12 text-white shadow-2xl relative">
+                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_#4f46e5_0%,_transparent_100%)]"></div>
+                    <div class="relative z-10 space-y-10">
+                        <div class="text-center">
+                            <h4 class="text-xs font-black text-brand-100 uppercase tracking-[0.4em] mb-6">Foundational Capabilities</h4>
+                            <div class="chart-container">
+                                <canvas id="capabilitiesRadar"></canvas>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-6 pt-6 border-t border-white/10">
+                            <div>
+                                <p class="text-3xl font-black stat-value">14+</p>
+                                <p class="text-[9px] font-black text-brand-100 uppercase tracking-widest italic opacity-60">Years Systems Exp.</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-black stat-value">100%</p>
+                                <p class="text-[9px] font-black text-brand-100 uppercase tracking-widest italic opacity-60">Data Integrity Record</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROVENANCE SECTION -->
+    <section id="provenance" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#312e81 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="max-w-3xl space-y-10">
+                <div class="space-y-4">
+                    <h2 class="text-xs font-black text-brand-100 uppercase tracking-[0.3em]">Leadership Provenance</h2>
+                    <h3 class="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none italic">The Architect's <br/> Ledger.</h3>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="p-10 bg-white/5 border border-white/10 rounded-[2.5rem] backdrop-blur-md">
+                        <div class="flex items-center gap-6 mb-8">
+                            <div class="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center font-black text-2xl shadow-lg">TI</div>
+                            <div>
+                                <h4 class="text-2xl font-black leading-none tracking-tight">Tetsuro Ide</h4>
+                                <p class="text-[10px] font-black text-brand-100 uppercase tracking-widest italic opacity-60 mt-2">Principal Systems Architect & Founder</p>
+                            </div>
+                        </div>
+                        <div class="grid gap-8">
+                            <div class="flex gap-6">
+                                <i data-lucide="award" class="text-brand-100 shrink-0"></i>
+                                <div class="space-y-2">
+                                    <p class="text-xl font-bold italic tracking-tight">Municipal Revenue Engine</p>
+                                    <p class="text-slate-400 text-sm leading-relaxed">Lead architect of Ottawa's **$20.7M Automated Speed Enforcement (ASE)** program. Scaled a pilot to a permanent city-wide system generating **$13,244 daily**.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6 pt-8 border-t border-white/10">
+                                <i data-lucide="building-2" class="text-brand-100 shrink-0"></i>
+                                <div class="space-y-2">
+                                    <p class="text-xl font-bold italic tracking-tight">Asset Protection Mastery</p>
+                                    <p class="text-slate-400 text-sm leading-relaxed">14+ years managing high-value LEED-certified facilities. Expert in structural optimizations, electrical load management, and multi-party partnering agreements.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white py-16 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white">
+                        <i data-lucide="hexagon" class="w-4 h-4"></i>
+                    </div>
+                    <span class="font-black text-slate-900 uppercase tracking-tighter italic">Kizuki Systems</span>
+                </div>
+                <p class="text-sm text-slate-500 font-medium max-w-xs leading-relaxed italic">
+                    Mapping the logic of the environment to protect the integrity of the asset.
+                </p>
+            </div>
+            
+            <div class="space-y-4">
+                <h5 class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Connect Node</h5>
+                <p class="text-xl font-black text-slate-900 stat-value">ide.tetsuro@gmail.com</p>
+                <div class="flex gap-4">
+                    <a href="#" class="p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-400 hover:text-brand-600 transition-all"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-400 hover:text-brand-600 transition-all"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+            
+            <div class="text-right flex flex-col justify-end">
+                <p class="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-bold">
+                    © 2026 // Based in Ottawa, ON // Sovereign Operating System
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Chart.js Setup
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('capabilitiesRadar').getContext('2d');
+            
+            Chart.defaults.font.family = "'Outfit', sans-serif";
+            Chart.defaults.color = '#94a3b8';
+
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Spatial Arch', 'Property Ops', 'AI Orchestration', 'Systems Logic', 'Forensic Audit', 'Hardware Integration'],
+                    datasets: [{
+                        label: 'Core Metrics',
+                        data: [85, 95, 75, 90, 98, 85],
+                        backgroundColor: 'rgba(79, 70, 229, 0.2)',
+                        borderColor: '#818cf8',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#818cf8',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#818cf8'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(255,255,255,0.1)' },
+                            grid: { color: 'rgba(255,255,255,0.1)' },
+                            pointLabels: {
+                                color: '#e2e8f0',
+                                font: { size: 10, weight: '900' }
+                            },
+                            ticks: { display: false, max: 100 }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

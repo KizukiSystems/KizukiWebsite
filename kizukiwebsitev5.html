@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kizuki Systems | Forensic PropTech & Spatial Intelligence</title>
+    <!-- Tailwind CSS for high-fidelity technical layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            600: '#4f46e5', // Primary Indigo
+                            700: '#4338ca',
+                            900: '#020617', // Darkest Slate
+                        },
+                        accent: {
+                            500: '#10b981', // Emerald success
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'ui-sans-serif', 'system-ui'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        :focus-visible { outline: 4px solid #4f46e5; outline-offset: 2px; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .forensic-border {
+            border: 1px solid rgba(15, 23, 42, 0.1);
+        }
+
+        .bamboo-line {
+            background: linear-gradient(to bottom, #10b981, transparent);
+            width: 2px;
+        }
+
+        .ledger-row:hover {
+            background: rgba(79, 70, 229, 0.03);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans leading-relaxed antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200" aria-label="Global Navigation">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-brand-900 rounded-xl flex items-center justify-center text-white shadow-xl">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-accent-500"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-black tracking-tighter uppercase leading-none">
+                        Kizuki <span class="text-brand-600">Systems</span>
+                    </h1>
+                    <p class="text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1 italic text-right">Forensic Deployment</p>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#directives" class="text-xs font-black text-slate-500 hover:text-brand-600 transition-colors uppercase tracking-widest">Directives</a>
+                <a href="#provenance" class="text-xs font-black text-slate-500 hover:text-brand-600 transition-colors uppercase tracking-widest">Provenance</a>
+                <a href="#domains" class="text-xs font-black text-slate-500 hover:text-brand-600 transition-colors uppercase tracking-widest">Domains</a>
+                <a href="mailto:ide.tetsuro@gmail.com" class="px-5 py-2.5 bg-brand-900 text-white text-[10px] font-black uppercase tracking-widest rounded-full hover:bg-brand-600 transition-all shadow-lg">
+                    Request Audit
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / RECORD -->
+    <section class="relative py-20 md:py-32 bg-white overflow-hidden border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-10">
+                <div class="space-y-4">
+                    <span class="inline-flex items-center gap-2 px-4 py-1 bg-brand-50 border border-brand-100 rounded-full text-brand-600 text-[10px] font-black uppercase tracking-[0.2em]">
+                        <span class="w-2 h-2 bg-brand-600 rounded-full animate-pulse"></span> Track Record: $60,000,000+ lifetimes Program Revenue
+                    </span>
+                    <h2 class="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter leading-[0.85]">
+                        Systems <br/>
+                        <span class="hero-gradient italic uppercase">Sovereignty.</span>
+                    </h2>
+                </div>
+                <p class="text-xl text-slate-500 max-w-xl font-medium leading-relaxed italic">
+                    "Traditional maintenance identifies failure after it happens. We audit the logic of the building to prevent the liability."
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-8 bg-brand-900 text-white rounded-[2rem] shadow-2xl relative overflow-hidden group">
+                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_#4f46e5_0%,_transparent_70%)]"></div>
+                    <p class="text-[10px] font-black text-brand-100 uppercase tracking-widest leading-none mb-4">Architecture Yield</p>
+                    <p class="text-5xl font-black font-mono tracking-tighter">$82,739</p>
+                    <p class="text-[9px] text-brand-400 font-bold uppercase mt-2 tracking-widest italic leading-tight">Peak Daily Municipal Revenue Generated</p>
+                </div>
+                <div class="p-8 bg-brand-50 border forensic-border rounded-[2rem] flex flex-col justify-between">
+                    <div>
+                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-4">Unit Integrity ROI</p>
+                        <p class="text-5xl font-black text-slate-900 font-mono tracking-tighter">10X</p>
+                    </div>
+                    <p class="text-[9px] text-brand-600 font-black uppercase tracking-widest italic mt-4 leading-tight">Avg. Identified Hidden Liabilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION / DIRECTIVES -->
+    <section id="directives" class="py-24 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+                <div class="md:w-1/3 space-y-6 sticky top-24">
+                    <h2 class="text-xs font-black text-brand-600 uppercase tracking-[0.3em]">The Sovereign Constitution</h2>
+                    <h3 class="text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase">The Bamboo <br/><span class="italic font-normal">Standard.</span></h3>
+                    <p class="text-slate-500 text-sm font-medium leading-relaxed">
+                        Kizuki Systems operates as an External Nervous System. Our morals are hardcoded into our workflows to ensure asset integrity and human sovereignty.
+                    </p>
+                </div>
+                <div class="md:w-2/3 grid gap-6">
+                    <article class="p-10 bg-white rounded-[2rem] border border-slate-200 shadow-sm relative overflow-hidden group">
+                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-accent-500"></div>
+                        <h4 class="text-xl font-black text-brand-900 uppercase tracking-tight mb-4">Directive 01: Radical Integrity</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed italic">
+                            We provide clinical truth. No placation. If an asset is leaking value, we report the state-change immediately. Affirmation is defined strictly as the reporting of verified data.
+                        </p>
+                    </article>
+                    <article class="p-10 bg-white rounded-[2rem] border border-slate-200 shadow-sm relative overflow-hidden group">
+                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-600"></div>
+                        <h4 class="text-xl font-black text-brand-900 uppercase tracking-tight mb-4">Directive 02: Sovereign Resilience</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed italic">
+                            Every system must be capable of localized operation. We utilize the cloud for scale, but the logic remains the property of the operator. We protect the "Human Core" from algorithmic noise.
+                        </p>
+                    </article>
+                    <article class="p-10 bg-white rounded-[2rem] border border-slate-200 shadow-sm relative overflow-hidden group">
+                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-indigo-900"></div>
+                        <h4 class="text-xl font-black text-brand-900 uppercase tracking-tight mb-4">Directive 03: The Warlock/Ghost Duality</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed italic">
+                            Strict mode segregation. High-power creation (Warlock Mode) is never mixed with silent background optimization (Ghost Mode). This prevents burnout and ensures technical precision.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROVENANCE / RESUME SYNTHESIS -->
+    <section id="provenance" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="mb-16 space-y-4">
+                <h2 class="text-xs font-black text-brand-600 uppercase tracking-[0.3em]">Leadership Provenance</h2>
+                <h3 class="text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none italic">The Architect's Ledger.</h3>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12">
+                <!-- Profile Summary -->
+                <div class="lg:col-span-4 space-y-8">
+                    <div class="p-8 bg-brand-900 text-white rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+                        <div class="w-20 h-20 bg-brand-600 rounded-full flex items-center justify-center text-white text-3xl font-black mb-6 shadow-xl">TI</div>
+                        <h4 class="text-2xl font-black tracking-tight leading-none">Tetsuro Ide</h4>
+                        <p class="text-xs font-black text-brand-400 uppercase tracking-widest italic mt-2">Systems Generalist & Founder</p>
+                        
+                        <div class="mt-8 space-y-4 text-xs font-medium text-brand-100 leading-relaxed">
+                            <p class="flex gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500 shrink-0"></i> 15+ Years Managing Multi-Million Dollar Infrastructure</p>
+                            <p class="flex gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500 shrink-0"></i> Expert in Ontario Building Code & Spatial Data Analytics</p>
+                            <p class="flex gap-3"><i data-lucide="check-circle" class="w-4 h-4 text-accent-500 shrink-0"></i> Lead Architect of City of Ottawa ASE Rollout</p>
+                        </div>
+                    </div>
+
+                    <div class="p-8 border forensic-border rounded-[2rem] space-y-6 bg-slate-50/50">
+                        <h5 class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Technical Stack</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white border border-slate-200 text-[10px] font-bold text-slate-600 rounded-lg">ArcGIS Pro</span>
+                            <span class="px-3 py-1 bg-white border border-slate-200 text-[10px] font-bold text-slate-600 rounded-lg">Power BI</span>
+                            <span class="px-3 py-1 bg-white border border-slate-200 text-[10px] font-bold text-slate-600 rounded-lg">Python (Pandas)</span>
+                            <span class="px-3 py-1 bg-white border border-slate-200 text-[10px] font-bold text-slate-600 rounded-lg">Gaussian Splatting</span>
+                            <span class="px-3 py-1 bg-white border border-slate-200 text-[10px] font-bold text-slate-600 rounded-lg">SharePoint Architecture</span>
+                            <span class="px-3 py-1 bg-white border border-slate-200 text-[10px] font-bold text-slate-600 rounded-lg">LEED/Building Science</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forensic Experience Ledger -->
+                <div class="lg:col-span-8">
+                    <div class="border forensic-border rounded-[2.5rem] bg-white overflow-hidden shadow-sm">
+                        <div class="p-8 border-b border-slate-100 flex justify-between items-center bg-slate-50/30">
+                            <h4 class="text-xs font-black text-slate-900 uppercase tracking-widest">Experience Ledger // DEFRAGMENTED_V2.0</h4>
+                            <span class="px-3 py-1 bg-accent-500/10 text-accent-500 text-[9px] font-black uppercase rounded-full">Source: Validated Resume</span>
+                        </div>
+
+                        <div class="divide-y divide-slate-100">
+                            <!-- Role 1 -->
+                            <div class="p-8 ledger-row transition-all group">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h5 class="text-xl font-black text-brand-900 uppercase tracking-tight">Lead Systems Architect</h5>
+                                        <p class="text-xs font-bold text-brand-600 uppercase tracking-widest mt-1 italic">Kizuki Systems | 2023 – Present</p>
+                                    </div>
+                                    <span class="text-[10px] font-mono font-bold text-slate-400">ACTIVE_NODE</span>
+                                </div>
+                                <ul class="space-y-3 text-sm text-slate-600 font-medium list-none">
+                                    <li class="flex gap-4"><i data-lucide="arrow-right" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i> Designing "Sovereign Data" architectures for private residential assets, integrating local-first AI models to automate maintenance audits.</li>
+                                    <li class="flex gap-4"><i data-lucide="arrow-right" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i> Developing 3D Building Information Models (BIM) via Gaussian Splatting to identify $10k+ in thermal/moisture risks per unit.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Role 2 -->
+                            <div class="p-8 ledger-row transition-all group">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h5 class="text-xl font-black text-brand-900 uppercase tracking-tight italic">Analyst, Automated Enforcement</h5>
+                                        <p class="text-xs font-bold text-brand-600 uppercase tracking-widest mt-1 italic">City of Ottawa | 2020 – 2023</p>
+                                    </div>
+                                    <span class="text-[10px] font-mono font-bold text-slate-400">MUNICIPAL_RECORD</span>
+                                </div>
+                                <ul class="space-y-3 text-sm text-slate-600 font-medium list-none">
+                                    <li class="flex gap-4"><li class="flex gap-4"><i data-lucide="arrow-right" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i> Architected the City’s $60M Automated Speed Enforcement (ASE) program; scaled a pilot into a permanent permanent city-wide system.</li>
+                                    <li class="flex gap-4"><i data-lucide="arrow-right" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i> Managed the data validation pipeline for 100k+ infraction events, ensuring 100% data integrity for court-admissible evidence.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Role 3 -->
+                            <div class="p-8 ledger-row transition-all group">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h5 class="text-xl font-black text-brand-900 uppercase tracking-tight italic">Coordinator, Transportation Data</h5>
+                                        <p class="text-xs font-bold text-brand-600 uppercase tracking-widest mt-1 italic">City of Ottawa | 2016 – 2020</p>
+                                    </div>
+                                    <span class="text-[10px] font-mono font-bold text-slate-400">INFRA_LOGIC</span>
+                                </div>
+                                <ul class="space-y-3 text-sm text-slate-600 font-medium list-none">
+                                    <li class="flex gap-4"><i data-lucide="arrow-right" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i> Managed a $1.5M hardware fleet and department-wide migration to SharePoint/Office 365.</li>
+                                    <li class="flex gap-4"><i data-lucide="arrow-right" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i> Supervised 14+ technical staff across volume studies and collision data analysis teams.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOMAINS / SERVICES -->
+    <section id="domains" class="py-24 bg-brand-900 text-white border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-20 text-center space-y-4">
+                <h2 class="text-xs font-black text-brand-400 uppercase tracking-[0.4em]">Operational Domains</h2>
+                <h3 class="text-5xl font-black tracking-tighter uppercase leading-tight italic">Solving the <span class="text-brand-600">Infrastructure</span> Puzzle.</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="p-10 bg-white/5 border border-white/10 rounded-[2.5rem] space-y-6">
+                    <div class="w-14 h-14 bg-brand-600/20 rounded-2xl flex items-center justify-center text-brand-600 shadow-inner">
+                        <i data-lucide="scan"></i>
+                    </div>
+                    <h4 class="text-2xl font-black uppercase tracking-tight italic">Division A: Field Ops</h4>
+                    <p class="text-xs font-medium text-slate-400 leading-relaxed">High-fidelity 3D spatial capture using Gaussian Splatting to map building integrity and mechanical hotspots.</p>
+                </article>
+                <article class="p-10 bg-white/5 border border-white/10 rounded-[2.5rem] space-y-6">
+                    <div class="w-14 h-14 bg-brand-600/20 rounded-2xl flex items-center justify-center text-brand-600 shadow-inner">
+                        <i data-lucide="database"></i>
+                    </div>
+                    <h4 class="text-2xl font-black uppercase tracking-tight italic">Division B: Consulting</h4>
+                    <p class="text-xs font-medium text-slate-400 leading-relaxed">Strategic data modeling, SharePoint architecture, and municipal safety policy development for institutional owners.</p>
+                </article>
+                <article class="p-10 bg-white/5 border border-white/10 rounded-[2.5rem] space-y-6">
+                    <div class="w-14 h-14 bg-brand-600/20 rounded-2xl flex items-center justify-center text-brand-600 shadow-inner">
+                        <i data-lucide="box"></i>
+                    </div>
+                    <h4 class="text-2xl font-black uppercase tracking-tight italic">Division C: Logistics</h4>
+                    <p class="text-xs font-medium text-slate-400 leading-relaxed">Optimizing the "Last Mile" of luxury residential logistics: staging, smart-integration, and asset preservation.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white py-20 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-16">
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-brand-900 rounded-lg flex items-center justify-center text-white">
+                        <i data-lucide="scan-eye" class="w-4 h-4 text-accent-500"></i>
+                    </div>
+                    <span class="text-xl font-black uppercase tracking-tighter">Kizuki <span class="italic text-brand-600">Systems</span></span>
+                </div>
+                <p class="text-sm text-slate-400 font-medium italic">
+                    Building the external nervous system for resilient property management.
+                </p>
+            </div>
+            
+            <div class="space-y-4">
+                <h5 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Communication Node</h5>
+                <p class="text-2xl font-black font-mono text-slate-900">ide.tetsuro@gmail.com</p>
+                <div class="flex gap-4">
+                    <a href="https://linkedin.com" class="p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-400 hover:text-brand-600 transition-all"><i data-lucide="linkedin"></i></a>
+                    <a href="https://github.com" class="p-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-400 hover:text-brand-600 transition-all"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+            
+            <div class="flex flex-col justify-end text-right">
+                <p class="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-bold">
+                    © 2026 // NATIONAL CAPITAL REGION // SOVEREIGN SYSTEMS INC.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Standard Haptic Interaction Logic
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                if (window.navigator.vibrate) window.navigator.vibrate(5);
+            });
+        });
+    </script>
+</body>
+</html>
