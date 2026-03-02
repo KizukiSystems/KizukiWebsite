@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kizuki Systems | Property Technology & Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .nav-btn.active { border-bottom: 2px solid #3b82f6; color: #3b82f6; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200 font-sans leading-relaxed">
+
+    <header class="bg-slate-800 shadow-lg border-b border-slate-700 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-bold text-white tracking-tight">Kizuki <span class="text-blue-500">Systems</span></h1>
+                <p class="text-sm text-slate-400 mt-1">Property Technology & Smart Integration</p>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <button onclick="openTab('about')" class="nav-btn active pb-2 font-medium hover:text-blue-400 transition">About</button>
+                <button onclick="openTab('projects')" class="nav-btn pb-2 font-medium hover:text-blue-400 transition">Current Phase</button>
+                <button onclick="openTab('roadmap')" class="nav-btn pb-2 font-medium hover:text-blue-400 transition">Roadmap</button>
+                <button onclick="openTab('skills')" class="nav-btn pb-2 font-medium hover:text-blue-400 transition">Capabilities</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+
+        <section id="about" class="tab-content active">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-6">Bridging the Gap Between Infrastructure and Innovation.</h2>
+                    <p class="text-lg text-slate-300 mb-4">
+                        Kizuki Systems is a property technology and consulting firm founded by Tetsuro Ide. We specialize in transforming fragmented residential environments into cohesive, highly efficient systems.
+                    </p>
+                    <p class="text-lg text-slate-300 mb-6">
+                        Drawing on a foundational background studying Engineering Physics and Integrated Science at Carleton University, combined with extensive, hands-on experience in building maintenance and community leadership, Kizuki Systems builds solutions that work in the real world—not just on paper.
+                    </p>
+                    <button onclick="openTab('projects')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        View Current Builds <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 shadow-2xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-400"><i class="fas fa-terminal mr-2"></i> Core Philosophy</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i> <span><strong>Centralization:</strong> Unifying disjointed smart devices and building systems into single control interfaces.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i> <span><strong>Practicality:</strong> Leveraging tangible building maintenance experience to design tech that actually solves operational friction.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i> <span><strong>Community:</strong> Building tools that empower resident associations, property managers, and homeowners alike.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="tab-content">
+            <h2 class="text-3xl font-bold text-white mb-8 border-b border-slate-700 pb-4">What's Built & Current Phase</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 shadow-lg hover:border-blue-500 transition duration-300">
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold text-white">Citadel OS</h3>
+                            <span class="bg-blue-900 text-blue-300 text-xs font-bold px-3 py-1 rounded-full">Active Development</span>
+                        </div>
+                        <p class="text-slate-300 mb-6">
+                            A comprehensive, unified personal home management system. Citadel OS is being engineered to bypass the fragmentation of modern smart homes, integrating disparate IoT devices, AI agents, and property management protocols into a seamless, user-centric dashboard.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 px-3 py-1 rounded text-sm">Smart Home</span>
+                            <span class="bg-slate-700 px-3 py-1 rounded text-sm">AI Agents</span>
+                            <span class="bg-slate-700 px-3 py-1 rounded text-sm">Systems Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 shadow-lg hover:border-blue-500 transition duration-300">
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold text-white">Livmore Resident Association</h3>
+                            <span class="bg-green-900 text-green-300 text-xs font-bold px-3 py-1 rounded-full">Established</span>
+                        </div>
+                        <p class="text-slate-300 mb-6">
+                            Spearheaded the organization and establishment of a formal resident association to effectively address building safety protocols and maintenance pipelines. This physical-world project serves as a blueprint for the B2B community management tools Kizuki Systems is developing.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 px-3 py-1 rounded text-sm">Community Leadership</span>
+                            <span class="bg-slate-700 px-3 py-1 rounded text-sm">Advocacy</span>
+                            <span class="bg-slate-700 px-3 py-1 rounded text-sm">Operations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="tab-content">
+            <h2 class="text-3xl font-bold text-white mb-8 border-b border-slate-700 pb-4">Future Roadmap</h2>
+            
+            <div class="relative border-l-2 border-slate-700 ml-3 md:ml-6 space-y-12 pb-8">
+                
+                <div class="relative pl-8 md:pl-0">
+                    <div class="md:flex items-center justify-between w-full">
+                        <div class="hidden md:block w-5/12 text-right pr-8">
+                            <h3 class="text-xl font-bold text-white">Phase 1: Foundation</h3>
+                            <p class="text-blue-400">Current - Q4 2026</p>
+                        </div>
+                        <div class="absolute left-[-9px] top-1 md:left-1/2 md:-ml-2.5 w-5 h-5 rounded-full bg-blue-600 border-4 border-slate-900"></div>
+                        <div class="md:w-5/12 md:pl-8">
+                            <div class="md:hidden mb-2">
+                                <h3 class="text-xl font-bold text-white">Phase 1: Foundation</h3>
+                                <p class="text-blue-400">Current - Q4 2026</p>
+                            </div>
+                            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
+                                <ul class="list-disc list-inside text-slate-300 space-y-2">
+                                    <li>Complete Ignition Program via Invest Ottawa.</li>
+                                    <li>Finalize Financial Modeling & Market Validation.</li>
+                                    <li>Deploy Alpha version of Citadel OS locally.</li>
+                                    <li>Launch Kizuki Consulting for initial B2B clients.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-0">
+                    <div class="md:flex items-center justify-between w-full flex-row-reverse">
+                        <div class="hidden md:block w-5/12 text-left pl-8">
+                            <h3 class="text-xl font-bold text-white">Phase 2: Scaling Tech</h3>
+                            <p class="text-slate-400">2027</p>
+                        </div>
+                        <div class="absolute left-[-9px] top-1 md:left-1/2 md:-ml-2.5 w-5 h-5 rounded-full bg-slate-600 border-4 border-slate-900"></div>
+                        <div class="md:w-5/12 md:pr-8 text-left md:text-right">
+                             <div class="md:hidden mb-2">
+                                <h3 class="text-xl font-bold text-white">Phase 2: Scaling Tech</h3>
+                                <p class="text-slate-400">2027</p>
+                            </div>
+                            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
+                                <ul class="list-disc list-inside text-slate-300 space-y-2 md:list-none">
+                                    <li>Beta launch of Citadel OS to early adopters.</li>
+                                    <li>Integrate advanced AI agent capabilities for predictive maintenance.</li>
+                                    <li>Secure initial seed funding or grants based on traction.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-0">
+                    <div class="md:flex items-center justify-between w-full">
+                        <div class="hidden md:block w-5/12 text-right pr-8">
+                            <h3 class="text-xl font-bold text-white">Phase 3: Physical Expansion</h3>
+                            <p class="text-slate-400">2028+</p>
+                        </div>
+                        <div class="absolute left-[-9px] top-1 md:left-1/2 md:-ml-2.5 w-5 h-5 rounded-full bg-slate-600 border-4 border-slate-900"></div>
+                        <div class="md:w-5/12 md:pl-8">
+                             <div class="md:hidden mb-2">
+                                <h3 class="text-xl font-bold text-white">Phase 3: Physical Expansion</h3>
+                                <p class="text-slate-400">2028+</p>
+                            </div>
+                            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg">
+                                <ul class="list-disc list-inside text-slate-300 space-y-2">
+                                    <li>Acquisition of land for specialized recreational property development.</li>
+                                    <li>Design and construction of a premier, tech-integrated disc golf resort.</li>
+                                    <li>Deploy Citadel OS as the native management system for the resort.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="tab-content">
+            <h2 class="text-3xl font-bold text-white mb-8 border-b border-slate-700 pb-4">Capabilities & Metrics</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-lg flex justify-center">
+                    <div style="width: 100%; max-width: 400px;">
+                        <canvas id="skillsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-white">Building Systems & Maintenance</span>
+                            <span class="text-blue-400 text-sm">Expert</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-white">Leadership & Team Management (8+ yrs)</span>
+                            <span class="text-blue-400 text-sm">Expert</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-white">Smart Home Integration (IoT)</span>
+                            <span class="text-blue-400 text-sm">Advanced</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-blue-400 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-white">AI Agents & Software Architecture</span>
+                            <span class="text-blue-400 text-sm">Intermediate/Growing</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-blue-300 h-2 rounded-full" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800 py-8 text-center text-slate-500 mt-12">
+        <p>&copy; 2026 Kizuki Systems. Founded by Tetsuro Ide. Based in Ottawa, ON.</p>
+    </footer>
+
+    <script>
+        // Tab Navigation Logic
+        function openTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Remove active class from buttons
+            const btns = document.querySelectorAll('.nav-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Highlight selected button
+            event.currentTarget.classList.add('active');
+        }
+
+        // Radar Chart Logic (Chart.js)
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Property Maintenance', 'Community Leadership', 'IoT Integration', 'AI Architecture', 'Project Scoping', 'Hardware Repair'],
+                datasets: [{
+                    label: 'Skill Proficiency',
+                    data: [95, 90, 85, 65, 80, 90],
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    pointBackgroundColor: 'rgba(59, 130, 246, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(59, 130, 246, 1)'
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        pointLabels: { color: '#cbd5e1', font: { size: 12 } },
+                        ticks: { display: false, min: 0, max: 100 }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
